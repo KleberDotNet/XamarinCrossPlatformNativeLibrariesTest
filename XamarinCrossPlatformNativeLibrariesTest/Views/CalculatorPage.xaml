@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinCrossPlatformNativeLibrariesTest.Views.CalculatorPage"
+             xmlns:vm="clr-namespace:XamarinCrossPlatformNativeLibrariesTest.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:CalculatorViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid
+        VerticalOptions="CenterAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250" />
+            <RowDefinition Height="250" />
+        </Grid.RowDefinitions>
+
+        <StackLayout
+            Grid.Row="0"
+            BackgroundColor="DarkCyan"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            Padding="20,20">
+
+            <Label
+                Text="C# Calculator (Xamarin) "
+                TextColor="White">
+            </Label>
+
+            <Entry
+                x:Name="FirstNumberEntry"
+                Text="{Binding FirstNumber}"
+                Placeholder="Enter first number"
+                Keyboard="Numeric"
+                TextColor="White">
+            </Entry>
+
+            <Entry
+                x:Name="SecondNumberEntry"
+                Text="{Binding SecondNumber}"
+                Placeholder="Enter second number"
+                Keyboard="Numeric"
+                TextColor="White">
+            </Entry>
+
+            <StackLayout
+                Orientation="Horizontal">
+
+                <Button
+                    Text="Sum"
+                    Command="{Binding CalculateSumCommand}">
+                </Button>
+
+                <Label
+                    Text="{Binding SumResult, StringFormat='Result: {0}'}"
+                    TextColor="White"
+                    FontSize="Large"
+                    VerticalOptions="Center"
+                    HorizontalOptions="EndAndExpand">
+                </Label>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout
+            Grid.Row="1"
+            BackgroundColor="Green"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            Padding="20,20">
+
+            <Label
+                Text="JAVA Calculator (Native)"
+                TextColor="White">
+            </Label>
+
+            <Entry
+                x:Name="FirstNumberJava"
+                Text="{Binding FirstNumberJava}"
+                Placeholder="Enter first number"
+                Keyboard="Numeric"
+                TextColor="White">
+            </Entry>
+
+            <Entry
+                x:Name="SecondNumberJava"
+                Text="{Binding SecondNumberJava}"
+                Placeholder="Enter second number"
+                Keyboard="Numeric"
+                TextColor="White">
+            </Entry>
+
+            <StackLayout
+                Orientation="Horizontal">
+
+                <Button
+                    Text="Sum"
+                    Command="{Binding CalculateSumCommandJava}">
+                </Button>
+
+                <Label
+                    Text="{Binding SumResultJava, StringFormat='Result: {0}'}"
+                    TextColor="White"
+                    FontSize="Large"
+                    VerticalOptions="Center"
+                    HorizontalOptions="EndAndExpand">
+                </Label>
+            </StackLayout>
+
+        </StackLayout>
+        
+    </Grid>
+
+</ContentPage>
