@@ -51,7 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CalculatorAarBinding">
-      <HintPath>..\..\BindingLibraries\CalculatorAarBinding\bin\Release\CalculatorAarBinding.dll</HintPath>
+      <HintPath>..\XamarinCrossPlatformNativeLibrariesTest\Libs\Android\CalculatorAarBinding.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
